@@ -1,60 +1,17 @@
-# CN Lab - Assignment 13
+CN Lab – Assignment 13
+Objective
 
-## Objective
 To learn packet capturing and analysis.
+Exercise
 
-## Exercise
 Create a binary tree topology with 7 switches in mininet. Capture packets at the root switch. Write a C program to extract the headers and draw a time diagram to show the protocols displayed in the captured file (save the .pcap/.pcapng file of wireshark/tshark) during a PING operation. List the L2, L3, L4 protocols that can be extracted from the .pcap/.pcapng file.
+Steps/Hints
 
-## Implementation
+    Create the mininet topology with mn command
+    Open the root switch with xterm and capture the packets there. Save the captured packet in pcap/pcapng file
+    Draw a time diagram in C showing occurrences of different types of packets with time
+    List the unique types of the packets or the types of protocol from the extracted packets
 
-### Packet Analyzer 
-- Reads .pcap/.pcapng files captured from Mininet
-- Extracts and analyzes L2, L3, and L4 protocol headers
-- Generates time diagram showing packet protocol occurrences
-- Lists unique protocols extracted from the capture
+Output Screenshots
 
-## Compilation
-```bash
-gcc protocol_analyzer.c -o protocol_analyzer -lpcap
-```
-
-Note: Requires libpcap development library
-```bash
-sudo apt-get install libpcap-dev
-```
-
-## Usage
-```bash
-./protocol_analyzer test.pcap
-```
-
-## Mininet Setup
-1. Create binary tree topology with 7 switches:
-   ```bash
-   sudo mn --topo tree,depth=3,fanout=2
-   ```
-
-2. In the Mininet CLI, open the root switch:
-   ```bash
-   xterm s1
-   ```
-
-3. Capture packets at the root switch:
-   ```bash
-   tcpdump -i s1-eth1 -w test.pcap
-   ```
-
-4. Perform PING operation between hosts:
-   ```bash
-   h1 ping h2
-   ```
-
-5. Stop tcpdump and analyze the captured file with the packet analyzer
-
-## Learning Outcomes
-1. Learning to analyze packets and its corresponding protocols.
-2. Learning the roles of L2/L3/L4 protocols for a communication.
-
-
-CSM24056
+![Screenshot](assignment13.png)
