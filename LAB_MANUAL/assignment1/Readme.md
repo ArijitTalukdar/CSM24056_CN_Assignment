@@ -1,39 +1,17 @@
-TCP Client-Server Socket Programming Assignment
+CN Lab – Assignment 1 Objective: To gain first hands on experience of basic Socket Programming.
 
-This assignment demonstrates basic TCP client-server communication where the client sends "Hi" and the server responds with "Hello".
-Files Included
+Exercise: Write a program to run TCP client and server socket programs where client first says "Hi" and in response server says "Hello".
 
-    tcpserver.c - Minimal TCP server program
-    tcpclient.c - Minimal TCP client program
+Steps/ Hints: (if any):
 
-Compilation
+    Create two mininet hosts,
+    Open the hosts individually in xterm windows,
+    In one host, run tcpserver program and then in another run the tcpclient.
 
-To compile both programs, run:
+Learning Outcomes:
 
-gcc tcp_server -o server
-gcc tcp_client -o client
+    Basics of TCP client and server programming.
 
-This will create two executables:
+OUTPUT SCREENSHOT
 
-    tcpserver
-    tcpclient
-
-Running the Programs in Mininet
-
-    Start Mininet with two hosts:
-
-sudo mn --topo single,2
-
-    In the Mininet CLI, open terminals for both hosts:
-
-xterm h1 h2
-
-    In h1 terminal, start the server:
-
-./server
-
-    In h2 terminal, run the client:
-
-./client
-
-CSM24056
+![program output.output](assignment1.png)
